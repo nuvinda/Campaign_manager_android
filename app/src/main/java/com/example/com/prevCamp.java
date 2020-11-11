@@ -7,25 +7,29 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class EditProfileActivity extends AppCompatActivity {
-
-    public void toActivity3(View v) {
-        startActivity(new Intent(this, campaignManHome.class));
-    }
+public class prevCamp extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile);
+        setContentView(R.layout.activity_prev_camp);
 
-        //Initialize and assign variable
+        ImageButton button = findViewById(R.id.search);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                search();
+            }
+        });
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         //set home selected
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.campaigns);
 
         //perform ItemSelectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -40,7 +44,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext()
-                                , campaignManHome.class));
+                                ,campaignManHome.class));
                         overridePendingTransition(0,0);
                         return true;
 
@@ -49,10 +53,17 @@ public class EditProfileActivity extends AppCompatActivity {
                                 , donors.class));
                         overridePendingTransition(0,0);
                         return true;
+
+                    case R.id.campaigns:
+                        return true;
                 }
                 return false;
             }
         });
 
+    }
+    public void search() {
+        Intent intent = new Intent(this, viewPrevCamp.class);
+        startActivity(intent);
     }
 }

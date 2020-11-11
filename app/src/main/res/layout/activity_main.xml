@@ -25,13 +25,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        android:onClick="toActivity2"
         android:text="Login"
         android:background="@color/colorPrimary"
         android:textColor="@android:color/white"
         android:textAllCaps="false" />
 
     <Button
+        android:id="@+id/signup"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

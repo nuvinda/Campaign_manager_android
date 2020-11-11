@@ -12,7 +12,6 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.internal.IGoogleMapDelegate;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -48,13 +47,19 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext()
-                                ,Activity3.class));
+                                , campaignManHome.class));
                         overridePendingTransition(0,0);
                         return true;
 
                     case R.id.donors:
                         startActivity(new Intent(getApplicationContext()
-                                ,Activity5.class));
+                                , donors.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.campaigns:
+                        startActivity(new Intent(getApplicationContext()
+                                , campaigns.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
@@ -88,14 +93,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 //            }
 //        });
 
-        LatLng Drive = new LatLng(6.927079, 79.861244);
-        MarkerOptions markerOptions = new MarkerOptions()
-                .position(Drive)
-                .title("Rajamaha Viharaya")
-                .snippet("Blood Drive");
-        gMap.addMarker(markerOptions);
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(Drive, 16);
-        gMap.animateCamera(cameraUpdate);
+        LatLng ucsc = new LatLng(6.9022, 79.8612);
+        gMap.addMarker(new MarkerOptions().position(ucsc).title("Blood Drive 1").snippet("Status: Ongoing Time: 8am-5pm Contact Deatails: Thamal -0782224214"));
+        gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ucsc,16));
     }
 
 

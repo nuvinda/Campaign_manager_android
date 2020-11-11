@@ -7,7 +7,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity3">
+    tools:context=".campaignManHome">
 
 
     <LinearLayout
@@ -40,6 +40,7 @@
 <!--        android:text="Donor management" />-->
 
     <Button
+        android:id="@+id/button1"
         android:layout_width="400dp"
         android:layout_height="70dp"
         android:layout_gravity="center"
@@ -51,7 +52,7 @@
         android:text="View blood Stocks" />
 
     <Button
-        android:id="@+id/btnShow"
+        android:id="@+id/button2"
         android:layout_width="400dp"
         android:layout_height="70dp"
         android:layout_gravity="center"
@@ -71,7 +72,8 @@
         app:itemTextColor="@drawable/selector"
         app:itemIconTint="@drawable/selector"
         app:menu="@menu/menu_navigation"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        app:labelVisibilityMode="labeled"/>
 
 
 </RelativeLayout>

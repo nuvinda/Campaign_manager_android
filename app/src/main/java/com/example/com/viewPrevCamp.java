@@ -7,27 +7,31 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Activity5 extends AppCompatActivity {
-
-    public void toActivity3(View v) { startActivity(new Intent(this, Activity3.class)); }
-
-    public void toActivity6(View v) {
-        startActivity(new Intent(this, Activity6.class));
-    }
+public class viewPrevCamp extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_5);
+        setContentView(R.layout.activity_view_prev_camp);
 
-        //Initialize and assign variable
+        Button button2 = findViewById(R.id.button2);
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                func2();
+            }
+        });
+
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         //set home selected
-        bottomNavigationView.setSelectedItemId(R.id.donors);
+        bottomNavigationView.setSelectedItemId(R.id.campaigns);
 
         //perform ItemSelectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -42,15 +46,29 @@ public class Activity5 extends AppCompatActivity {
 
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext()
-                                ,Activity3.class));
+                                ,campaignManHome.class));
                         overridePendingTransition(0,0);
                         return true;
 
                     case R.id.donors:
+                        startActivity(new Intent(getApplicationContext()
+                                , donors.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.campaigns:
                         return true;
                 }
                 return false;
             }
         });
     }
+
+
+    public void func2() {
+        Intent intent = new Intent(this, prevCamp.class);
+        startActivity(intent);
+
+    }
+
 }

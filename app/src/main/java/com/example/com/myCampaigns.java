@@ -7,38 +7,43 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Activity6 extends AppCompatActivity {
-
-    public void toActivity8(View v) {
-        startActivity(new Intent(this, Activity8.class));
-    }
-
-    public void toActivity9(View v) {
-        startActivity(new Intent(this, Activity9.class));
-    }
-
-    public void toActivity5(View v) {
-        startActivity(new Intent(this, Activity5.class));
-    }
-
-    public void toDonationsActivity(View v) {
-        startActivity(new Intent(this, DonationsActivity.class));
-    }
-
+public class myCampaigns extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_6);
+        setContentView(R.layout.activity_my_campaigns);
+        Button button1 = findViewById(R.id.button1);
+        Button button2 = findViewById(R.id.button2);
+        Button button3 = findViewById(R.id.button3);
 
-        //Initialize and assign variable
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                prev();
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ongoing();
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                upcoming();
+            }
+        });
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         //set home selected
-        bottomNavigationView.setSelectedItemId(R.id.donors);
+        bottomNavigationView.setSelectedItemId(R.id.campaigns);
 
         //perform ItemSelectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -53,19 +58,36 @@ public class Activity6 extends AppCompatActivity {
 
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext()
-                                ,Activity3.class));
+                                ,campaignManHome.class));
                         overridePendingTransition(0,0);
                         return true;
 
                     case R.id.donors:
                         startActivity(new Intent(getApplicationContext()
-                                ,Activity5.class));
+                                , donors.class));
                         overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.campaigns:
                         return true;
                 }
                 return false;
             }
         });
+    }
 
+    public void prev() {
+        Intent intent = new Intent(this, prevCamp.class);
+        startActivity(intent);
+    }
+
+    public void ongoing() {
+        Intent intent = new Intent(this, ongoingCamp.class);
+        startActivity(intent);
+    }
+
+    public void upcoming() {
+        Intent intent = new Intent(this, upcomingCamp.class);
+        startActivity(intent);
     }
 }

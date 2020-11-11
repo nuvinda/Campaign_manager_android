@@ -16,4 +16,9 @@
         android:title="Donors"
         android:icon="@drawable/ic_donors" />
 
+    <item
+        android:id="@+id/campaigns"
+        android:title="Campaigns"
+        android:icon="@drawable/ic_event" />
+
 </menu>

@@ -10,16 +10,12 @@ import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class EditProfileActivity extends AppCompatActivity {
-
-    public void toActivity3(View v) {
-        startActivity(new Intent(this, campaignManHome.class));
-    }
+public class viewBloodStocks extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile);
+        setContentView(R.layout.activity_view_blood_stocks);
 
         //Initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -39,9 +35,6 @@ public class EditProfileActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.home:
-                        startActivity(new Intent(getApplicationContext()
-                                , campaignManHome.class));
-                        overridePendingTransition(0,0);
                         return true;
 
                     case R.id.donors:
@@ -49,10 +42,16 @@ public class EditProfileActivity extends AppCompatActivity {
                                 , donors.class));
                         overridePendingTransition(0,0);
                         return true;
+
+                    case R.id.campaigns:
+                        startActivity(new Intent(getApplicationContext()
+                                , campaigns.class));
+                        overridePendingTransition(0,0);
+                        return true;
                 }
                 return false;
             }
         });
-
     }
+
 }

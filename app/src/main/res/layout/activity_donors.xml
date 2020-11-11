@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity5">
+    tools:context=".donors">
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -14,16 +14,6 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:orientation="vertical" >
-
-    <ImageButton
-        android:id="@+id/back"
-        android:layout_width="47dp"
-        android:layout_height="45dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:onClick="toActivity3"
-        android:background="#00000000"
-        android:src="@drawable/backarrow" />
 
     <LinearLayout
         android:layout_width="match_parent"

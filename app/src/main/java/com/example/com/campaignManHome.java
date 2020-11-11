@@ -14,33 +14,29 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
-public class Activity3 extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
-
-
-    public void toActivity4(View v) {
-        startActivity(new Intent(this, Activity4.class));
-    }
-
-    public void toMapsActivity(View v) {
-        startActivity(new Intent(this, MapsActivity.class));
-    }
-
-    public void toActivity5(View v) {
-        startActivity(new Intent(this, Activity5.class));
-    }
+public class campaignManHome extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_3);
-        Button btn = (Button) findViewById(R.id.btnShow);
-        btn.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_campaign_man_home);
+
+        Button button1 = (Button) findViewById(R.id.button1);
+        Button button2 = (Button) findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopupMenu popup = new PopupMenu(Activity3.this, v);
-                popup.setOnMenuItemClickListener(Activity3.this);
+                PopupMenu popup = new PopupMenu(campaignManHome.this, v);
+                popup.setOnMenuItemClickListener(campaignManHome.this);
                 popup.inflate(R.menu.popup_menu);
                 popup.show();
+            }
+        });
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewStocks();
             }
         });
 
@@ -66,7 +62,13 @@ public class Activity3 extends AppCompatActivity implements PopupMenu.OnMenuItem
 
                     case R.id.donors:
                         startActivity(new Intent(getApplicationContext()
-                                ,Activity5.class));
+                                , donors.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.campaigns:
+                        startActivity(new Intent(getApplicationContext()
+                                , campaigns.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
@@ -81,22 +83,26 @@ public class Activity3 extends AppCompatActivity implements PopupMenu.OnMenuItem
         switch (item.getItemId()) {
 
             case R.id.edit_profile:
-                Intent myintent1 = new Intent(Activity3.this, EditProfileActivity.class);
+                Intent myintent1 = new Intent(campaignManHome.this, EditProfileActivity.class);
                 startActivity(myintent1);
                 return false;
 
             case R.id.notifications:
-                // do your code
                 return true;
 
             case R.id.log_out:
-                Intent myintent2 = new Intent(Activity3.this, MainActivity.class);
+                Intent myintent2 = new Intent(campaignManHome.this, MainActivity.class);
                 startActivity(myintent2);
                 return false;
 
             default:
                 return false;
         }
+    }
+
+    public void viewStocks() {
+        Intent intent = new Intent(this, viewBloodStocks.class);
+        startActivity(intent);
     }
 
 }

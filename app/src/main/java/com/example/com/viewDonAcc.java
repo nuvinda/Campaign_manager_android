@@ -7,25 +7,33 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class EditProfileActivity extends AppCompatActivity {
-
-    public void toActivity3(View v) {
-        startActivity(new Intent(this, campaignManHome.class));
-    }
+public class viewDonAcc extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile);
+        setContentView(R.layout.activity_view_don_acc);
+
+        Button button = findViewById(R.id.button);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                func();
+            }
+        });
 
         //Initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         //set home selected
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.donors);
 
         //perform ItemSelectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -45,14 +53,21 @@ public class EditProfileActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.donors:
+                        return true;
+
+                    case R.id.campaigns:
                         startActivity(new Intent(getApplicationContext()
-                                , donors.class));
+                                , campaigns.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
                 return false;
             }
         });
+    }
 
+    public void func() {
+        Intent intent = new Intent(this, donors.class);
+        startActivity(intent);
     }
 }

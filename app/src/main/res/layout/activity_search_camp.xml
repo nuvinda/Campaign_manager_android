@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity6">
+    tools:context=".searchCamp">
 
 <ScrollView
     android:layout_width="match_parent"
@@ -23,31 +23,22 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="40dp"
-            android:text="Donor's Username"
-            android:textSize="25dp" />
-
-        <TextView
             android:id="@+id/donorid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:textSize="20dp"
-            android:text="Donor ID:xxxxxx" />
+            android:text="Campaign ID:xxxxxx" />
 
         <ImageView
-            android:id="@+id/avatar"
+            android:id="@+id/event"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="30dp"
-            android:src="@drawable/avatarnew" />
+            android:src="@drawable/ic_event" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,7 +46,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/gender"
+                android:id="@+id/date"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -63,10 +54,10 @@
                 android:layout_marginBottom="3dp"
                 android:layout_marginRight="40dp"
                 android:textSize="15dp"
-                android:text="Gender" />
+                android:text="Date" />
 
             <TextView
-                android:id="@+id/gendert"
+                android:id="@+id/datet"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -75,7 +66,7 @@
                 android:layout_marginRight="40dp"
                 android:layout_marginLeft="40dp"
                 android:textSize="15dp"
-                android:text="Male" />
+                android:text="10-20-2020" />
 
         </LinearLayout>
 
@@ -85,7 +76,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/bloodtype"
+                android:id="@+id/stime"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -93,10 +84,10 @@
                 android:layout_marginBottom="3dp"
                 android:layout_marginRight="40dp"
                 android:textSize="15dp"
-                android:text="Blood Type"/>
+                android:text="Start Time" />
 
             <TextView
-                android:id="@+id/bloodtypet"
+                android:id="@+id/stimet"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -105,7 +96,7 @@
                 android:layout_marginRight="40dp"
                 android:layout_marginLeft="40dp"
                 android:textSize="15dp"
-                android:text="O+"/>
+                android:text="12:30" />
 
         </LinearLayout>
 
@@ -115,7 +106,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/birthday"
+                android:id="@+id/etime"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -123,10 +114,70 @@
                 android:layout_marginBottom="3dp"
                 android:layout_marginRight="40dp"
                 android:textSize="15dp"
-                android:text="Birth Day" />
+                android:text="End Time" />
 
             <TextView
-                android:id="@+id/birthdayt"
+                android:id="@+id/etimet"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:textSize="15dp"
+                android:text="16:35" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginRight="40dp"
+                android:textSize="15dp"
+                android:text="Status"/>
+
+            <TextView
+                android:id="@+id/statust"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:textSize="15dp"
+                android:text="Ended"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginRight="40dp"
+                android:textSize="15dp"
+                android:text="Address" />
+
+            <TextView
+                android:id="@+id/addresst"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -134,7 +185,7 @@
                 android:layout_marginBottom="3dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginLeft="40dp"
-                android:text="07-20-1990"
+                android:text="Sri Thilakaramaya, Batuwandara"
                 android:textSize="15dp" />
 
 
@@ -146,7 +197,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/age"
+                android:id="@+id/organizer"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -154,10 +205,10 @@
                 android:layout_marginBottom="3dp"
                 android:layout_marginRight="40dp"
                 android:textSize="15dp"
-                android:text="Age" />
+                android:text="Oganizer" />
 
             <TextView
-                android:id="@+id/aget"
+                android:id="@+id/organizert"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -166,7 +217,7 @@
                 android:layout_marginRight="40dp"
                 android:layout_marginLeft="40dp"
                 android:textSize="15dp"
-                android:text="30" />
+                android:text="K.H.Liyanage" />
 
         </LinearLayout>
 
@@ -176,7 +227,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/weight"
+                android:id="@+id/email"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -184,10 +235,10 @@
                 android:layout_marginBottom="3dp"
                 android:layout_marginRight="40dp"
                 android:textSize="15dp"
-                android:text="Weight" />
+                android:text="Email" />
 
             <TextView
-                android:id="@+id/weightt"
+                android:id="@+id/emailt"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -196,7 +247,7 @@
                 android:layout_marginRight="40dp"
                 android:layout_marginLeft="40dp"
                 android:textSize="15dp"
-                android:text="60 Kg" />
+                android:text="liyanage@gmail.com" />
 
         </LinearLayout>
 
@@ -206,7 +257,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/height"
+                android:id="@+id/contact"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -214,10 +265,10 @@
                 android:layout_marginBottom="3dp"
                 android:layout_marginRight="40dp"
                 android:textSize="15dp"
-                android:text="Height" />
+                android:text="Contact Details" />
 
             <TextView
-                android:id="@+id/heightt"
+                android:id="@+id/contactt"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -226,88 +277,21 @@
                 android:layout_marginRight="40dp"
                 android:layout_marginLeft="40dp"
                 android:textSize="15dp"
-                android:text="187 cm" />
+                android:text="0718278273" />
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/diseases"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="3dp"
-                android:layout_marginRight="40dp"
-                android:textSize="15dp"
-                android:text="Diseases"/>
-
-            <TextView
-                android:id="@+id/diseasest"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="3dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginLeft="40dp"
-                android:text="Diseases"
-                android:textSize="15dp" />
-
-        </LinearLayout>
-
-    <Button
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:onClick="toActivity8"
-        android:shadowColor="#FFFFFF"
-        android:text="Edit donor's medical details"
-        android:background="@color/colorPrimary"
-        android:textColor="@android:color/white"
-        android:textAllCaps="false"
-        android:textSize="15dp" />
-
-<!--    <Button-->
-<!--        android:layout_width="400dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:onClick="toActivity7"-->
-<!--        android:text="Mark the status"-->
-<!--        android:textAllCaps="false"-->
-<!--        android:textSize="15dp" />-->
-
-
-    <Button
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:onClick="toActivity9"
-        android:text="Generate Blood Analysis Test report"
-        android:textAllCaps="false"
-        android:background="@color/colorPrimary"
-        android:textColor="@android:color/white"
-        android:textSize="15dp" />
-
 
         <Button
-            android:layout_width="400dp"
+            android:id="@+id/button"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:onClick="toDonationsActivity"
-            android:text="Donations"
-            android:textAllCaps="false"
-            android:layout_marginBottom="100dp"
+            android:layout_marginTop="50dp"
+            android:shadowColor="#FFFFFF"
+            android:text="Done"
             android:background="@color/colorPrimary"
             android:textColor="@android:color/white"
+            android:textAllCaps="false"
             android:textSize="15dp" />
 
 
@@ -322,6 +306,7 @@
         app:itemTextColor="@drawable/selector"
         app:itemIconTint="@drawable/selector"
         app:menu="@menu/menu_navigation"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        app:labelVisibilityMode="labeled"/>
 
 </RelativeLayout>

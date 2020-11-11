@@ -14,7 +14,8 @@
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
         android:textSize="25dp"
-        android:text="Welcome back" />
+        android:text="Welcome back"
+        android:textColor="#CC2F2F"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -31,12 +32,12 @@
         android:hint="Password" />
 
     <Button
-        android:layout_width="100dp"
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:textAllCaps="false"
-        android:onClick="toActivity3"
         android:background="@color/colorPrimary"
         android:textColor="@android:color/white"
         android:text="Continue" />

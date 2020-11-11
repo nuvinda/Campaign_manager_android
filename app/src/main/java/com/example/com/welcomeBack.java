@@ -7,28 +7,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-
-public class MainActivity extends AppCompatActivity {
-
+public class welcomeBack extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_welcomeback);
 
-        Button button = findViewById(R.id.login);
+        Button button = findViewById(R.id.button);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clickLogIn();
+                loggedIn();
             }
         });
     }
 
-    public void clickLogIn() {
-        Intent intent = new Intent(this, welcomeBack.class);
+    public void loggedIn() {
+        Intent intent = new Intent(this, campaignManHome.class);
         startActivity(intent);
     }
-
 }

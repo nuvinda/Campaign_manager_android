@@ -13,21 +13,31 @@
         android:roundIcon="@drawable/android_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DonationsActivity"></activity>
+        <activity android:name=".viewAllAppointments"></activity>
+        <activity android:name=".viewOngoingCamp" />
+        <activity android:name=".viewUpcomingCamp" />
+        <activity android:name=".viewPrevCamp" />
+        <activity android:name=".upcomingCamp" />
+        <activity android:name=".ongoingCamp" />
+        <activity android:name=".prevCamp" />
+        <activity android:name=".allCampaigns" />
+        <activity android:name=".myCampaigns" />
+        <activity android:name=".campaigns" />
+        <activity android:name=".addCampaignSuccess" />
+        <activity android:name=".addNewCampaign" />
         <activity android:name=".EditProfileActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_key" />
 
-        <activity android:name=".Activity9" />
-        <activity android:name=".Activity8" />
-        <activity android:name=".Activity6" />
-        <activity android:name=".Activity5" />
-        <activity android:name=".Activity4" />
+        <activity android:name=".viewDonAcc" />
+        <activity android:name=".searchCamp" />
+        <activity android:name=".donors" />
+        <activity android:name=".viewBloodStocks" />
         <activity android:name=".MapsActivity" />
-        <activity android:name=".Activity3" />
-        <activity android:name=".Activity2" />
+        <activity android:name=".campaignManHome" />
+        <activity android:name=".welcomeBack" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -7,32 +7,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Activity8 extends AppCompatActivity {
-
-    public void toActivity6(View v) {
-        startActivity(new Intent(this, Activity6.class));
-    }
-
-    public void toActivity3(View v) {
-        startActivity(new Intent(this, Activity3.class));
-    }
+public class donors extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_8);
+        setContentView(R.layout.activity_donors);
 
-        Spinner dropdown = findViewById(R.id.spinner1);
-        String[] items = new String[]{"Eligible", "Temporarily Ineligible", "Permenantly Ineligible"};
+        ImageButton button = findViewById(R.id.search);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
-
-        dropdown.setAdapter(adapter);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                search();
+            }
+        });
 
         //Initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -44,27 +37,35 @@ public class Activity8 extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch(menuItem.getItemId()){
+                switch (menuItem.getItemId()) {
                     case R.id.map:
                         startActivity(new Intent(getApplicationContext()
-                                ,MapsActivity.class));
-                        overridePendingTransition(0,0);
+                                , MapsActivity.class));
+                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext()
-                                ,Activity3.class));
-                        overridePendingTransition(0,0);
+                                , campaignManHome.class));
+                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.donors:
+                        return true;
+
+                    case R.id.campaigns:
                         startActivity(new Intent(getApplicationContext()
-                                ,Activity5.class));
-                        overridePendingTransition(0,0);
+                                , campaigns.class));
+                        overridePendingTransition(0, 0);
                         return true;
                 }
                 return false;
             }
         });
+    }
+
+    public void search() {
+        Intent intent = new Intent(this, viewDonAcc.class);
+        startActivity(intent);
     }
 }
